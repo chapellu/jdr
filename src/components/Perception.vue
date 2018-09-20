@@ -1,40 +1,26 @@
 <template>
-  <v-app>
-    <v-container fluid grid-list-md>
-      <v-layout row wrap>
-        <v-flex d-flex lg12>
-          <Resume></Resume>
-        </v-flex>
-        <v-flex lg12>
-          <v-card color=yellow>Techniques</v-card>
-        </v-flex>
-        <v-flex d-flex lg9>
-          <Menu></Menu>
-        </v-flex>
-        <v-flex lg3>
-          <Perception></Perception>
-        </v-flex>
-      </v-layout>
-    </v-container>
-  </v-app>
+    <v-card color=blue>
+        <v-toolbar color=blue dark>
+        <v-toolbar-title>Perception</v-toolbar-title> 
+        </v-toolbar>
+        <v-list two-line>
+        <template v-for="(item, index) in items">
+            <v-list-tile :key="index" avatar ripple @click="">
+            <v-list-tile-content>
+                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+                <v-list-tile-sub-title class="text--primary">{{ item.headline }}</v-list-tile-sub-title>
+                <v-list-tile-sub-title>{{ item.subtitle }}</v-list-tile-sub-title>
+            </v-list-tile-content>
+            </v-list-tile>
+            <v-divider v-if="index + 1 < items.length" :key="`divider-${index}`"></v-divider>
+        </template>
+        </v-list>
+    </v-card>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
-import Statistiques from "./components/Statistiques";
-import Resume from "./components/Resume";
-import Menu from "./components/Menu";
-import Perception from "./components/Perception";
-
 export default {
-  name: "App",
-  components: {
-    HelloWorld,
-    Statistiques,
-    Resume,
-    Menu,
-    Perception
-  },
+  name: "Perception",
   data() {
     return {
       items: [
@@ -71,9 +57,7 @@ export default {
           subtitle:
             "We should eat this: Grate, Squash, Corn, and tomatillo Tacos."
         }
-      ],
-      text:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      ]
     };
   }
 };
