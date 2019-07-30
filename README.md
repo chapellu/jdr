@@ -7,3 +7,5 @@ In a world where everything that matter is strength, all your life, social posit
 How do people live in such a world? What is hidden behind this?
 
 Welcome in ....
+
+Dev is currently in pause
